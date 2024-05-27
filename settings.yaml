@@ -1,0 +1,18 @@
+organization_name: "yourorganization"
+
+strings_to_replace:
+  - old: "Introduction"
+    new: "Intro"
+  - old: "# Getting Started"
+    new: "## Getting Started"
+
+
+dry_run: false
+projects_and_repos:
+  projectX:
+    - repo1
+    - repo2
+  projectY:
+  projectZ:
+    - repo4
+    - repo5
