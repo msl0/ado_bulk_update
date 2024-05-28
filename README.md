@@ -16,7 +16,7 @@ To install the required dependencies, run the following command:
 pip install -r requirements.txt
 ```
 
-[Az CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) is required for authentication
+Install [Az CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 
 ## Usage
 
