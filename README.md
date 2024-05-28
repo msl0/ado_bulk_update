@@ -1,11 +1,12 @@
 # ado_bulk_update
 
-This is a project for performing bulk updates in ADO (Azure DevOps) using Python.
+This is a project for performing bulk updates in ADO (Azure DevOps) using Python. The tool creates branches where it makes changes for all occurrences of the specified string in the indicated repositories. It then opens pull requests and returns links to the PRs.
 
 ### Features
 * changing one or more strings at once
 * ability to change all occurrences of string(s) in the entire organization or specific projects and repositories
 * dry run
+* authentication via Az CLI - no PAT token needed
 
 
 ## Installation
