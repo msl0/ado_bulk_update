@@ -20,6 +20,7 @@ from azure.devops.connection import Connection
 from azure.devops.exceptions import AzureDevOpsServiceError
 from azure.devops.v7_0.search.models import CodeSearchRequest
 from datetime import datetime
+from urllib.parse import quote
 import json
 import sys
 import textwrap
@@ -154,8 +155,8 @@ def replace_string_in_file(
     )
 
     if len(existing_pr) != 0:
-        pr_url = f"https://dev.azure.com/{organization_name}/{
-            project}/_git/{repo_name}/pullrequest/{existing_pr[0].pull_request_id}"
+        pr_url = quote(f"https://dev.azure.com/{organization_name}/{
+            project}/_git/{repo_name}/pullrequest/{existing_pr[0].pull_request_id}", safe=':/')
 
     if old_string not in item.content:
 
@@ -178,8 +179,8 @@ def replace_string_in_file(
             repository_id=repo_id,
             project=project,
         )
-        pr_url = f"https://dev.azure.com/{organization_name}/{
-            project}/_git/{repo_name}/pullrequest/{pr.pull_request_id}"
+        pr_url = quote(f"https://dev.azure.com/{organization_name}/{
+            project}/_git/{repo_name}/pullrequest/{pr.pull_request_id}", safe=':/')
         print(f"PR created: {pr_url}\n")
     else:
         print(f"PR already exists: {pr_url}\n")
