@@ -153,8 +153,9 @@ def replace_string_in_file(
         )
     )
 
-    pr_url = f"https://dev.azure.com/{organization_name}/{
-        project}/_git/{repo_name}/pullrequest/{existing_pr[0].pull_request_id}"
+    if len(existing_pr) != 0:
+        pr_url = f"https://dev.azure.com/{organization_name}/{
+            project}/_git/{repo_name}/pullrequest/{existing_pr[0].pull_request_id}"
 
     if old_string not in item.content:
 
